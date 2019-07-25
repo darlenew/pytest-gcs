@@ -38,7 +38,7 @@ def pytest_configure(config):
     global now
 
     bucket = config.getoption('gcs_bucket')
-    key = config.getoption('gcs_service_key')
+    key = os.path.expanduser(config.getoption('gcs_service_key'))
     filename = config.getoption('gcs_filename')
 
     _gcs_required = [key, bucket]
@@ -58,7 +58,7 @@ def pytest_sessionfinish(session, exitstatus):
     global now
 
     bucket = session.config.getoption('gcs_bucket')
-    key = session.config.getoption('gcs_service_key')
+    key = os.path.expanduser(session.config.getoption('gcs_service_key'))
     if bucket:
         htmlpath = session.config.getoption('htmlpath')
         src = htmlpath
