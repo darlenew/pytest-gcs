@@ -8,7 +8,6 @@ $ pip install .
 ## Help
 
 ```
-gcs:
   --gcs-service-key=GCS_SERVICE_KEY
                         path to Google Cloud service key credentials
   --gcs-bucket=GCS_BUCKET
